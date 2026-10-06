@@ -43,7 +43,10 @@ internal class Program
         center.PrintAllShipments();
         #endregion
 
-        
+        #region f,g
+        center.PrintTrackingStatus();
+        center.PrintInsurance();
+        #endregion
 
         #region h
 
