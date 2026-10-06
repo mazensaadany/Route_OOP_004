@@ -64,6 +64,18 @@ internal class Program
         #endregion
 
         #region i
+        IInsurable[] insurables = new IInsurable[]
+        {
+            STshipment,
+            EXshipment,
+            INshipment
+        };
+
+        foreach (IInsurable insurable in insurables)
+        {
+            deliveryReport.PrintInsurance(insurable);
+        }
+        #endregion
     }
 }
 
