@@ -13,7 +13,40 @@ internal class Program
         #endregion
 
         #region theorical ans 2
-        //abstract class: a class that cannot be instantiated and is meant to be inherited by other classes. It can contain abstract methods (without implementation) and concrete methods (with implementation).
+        //abstract class: a class that cannot be instantiated and is meant to be inherited by other classes.
+        //It can contain abstract methods (without implementation) and concrete methods (with implementation).
+        //-----------------------------------------------//
+        //interface: a contract that defines a set of methods and properties that a class must implement.
+
+        //************************************************//
+
+        // choose interface when you want to define a contract that multiple classes can implement.
+
+        //************************************************//
+
+        // NO, in C# class cannot inherit from multiple classes,
+        // but it can implement multiple interfaces.
+        #endregion
+        //////////////////////////////////////////////
+        // Practical part //
+
+        #region ans a:e
+        StandardShipment STshipment = new StandardShipment();
+        ExpressShipment EXshipment = new ExpressShipment();
+        InternationalShipment INshipment = new InternationalShipment();
+
+        DeliveryCenter center = new DeliveryCenter();
+        center.AddShipment(EXshipment);
+        center.AddShipment(INshipment);
+        center.AddShipment(STshipment);
+
+        center.PrintAllShipments();
+        #endregion
+
+        
+
+        #region h
+
         #endregion
     }
 }

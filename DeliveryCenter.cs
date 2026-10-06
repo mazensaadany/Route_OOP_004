@@ -112,5 +112,35 @@ public class DeliveryCenter
             }
         }
     }
+
+    public void PrintTrackingStatus()
+    {
+        foreach (ITrackable t in shipments)
+        {
+            int i = 0;
+            if (t != null)
+            {
+                Console.WriteLine($"Tracking Status{i}");
+                Console.WriteLine(t.GetTrackingStatus());
+                Console.WriteLine("==========================");
+                i++;
+            }
+        }
+    }
+
+    public void PrintInsurance()
+    {
+        foreach (IInsurable i in shipments)
+        {
+            int j = 0;
+            if (i != null)
+            {
+                Console.WriteLine($"insurance of shipment:{j}");
+                Console.WriteLine(i.CalculateInsurance());
+                Console.WriteLine("==========================");
+                j++;
+            }
+        }
+    }
     #endregion
 }

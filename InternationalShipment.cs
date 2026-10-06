@@ -1,5 +1,5 @@
 ﻿namespace Route_OOP_004;
-public class InternationalShipment:Shipment
+public class InternationalShipment:Shipment, IInsurable, ITrackable
 {
     #region fields
     private string destinationCountry;
@@ -52,13 +52,29 @@ public class InternationalShipment:Shipment
     {
         Console.WriteLine("International Shipment Details:");
         Console.WriteLine($"Destination Country: {DestinationCountry}");
-        base.PrintShipment();
+        Console.WriteLine($"Destination is :{Destination}");
+        Console.WriteLine($"Tracking code : {TrackingCode}");
+        Console.WriteLine($"Description : {Description}");
+        Console.WriteLine($"Weight : {Weight}");
+        Console.WriteLine($"Delivery Fee : {DeliveryFee}");
         Console.WriteLine($"Customs Fee: {CustomsFee:C}");
+        Console.WriteLine($"Estimated Cost : {EstimatedCost}");
+        Console.WriteLine("================================");
     }
 
     public virtual void GenerateCustomsReport()
     {
         Console.WriteLine("Customs Report:");
+    }
+
+    public string GetTrackingStatus()
+    {
+        return "Shipment 'SH03' has been delivered";
+    }
+
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.12m; // 12% of the estimated cost
     }
     #endregion
 }

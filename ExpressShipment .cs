@@ -1,5 +1,5 @@
 ﻿namespace Route_OOP_004;
-public class ExpressShipment:Shipment
+public class ExpressShipment:Shipment, IInsurable, ITrackable
 {
 
     private decimal extraFee;
@@ -42,8 +42,24 @@ public class ExpressShipment:Shipment
     public override void PrintShipment()
     {
         Console.WriteLine("Express Shipment Details:");
-        base.PrintShipment();
+        Console.WriteLine($"Destination is :{Destination}");
+        Console.WriteLine($"Tracking code : {TrackingCode}");
+        Console.WriteLine($"Description : {Description}");
+        Console.WriteLine($"Weight : {Weight}");
+        Console.WriteLine($"Delivery Fee : {DeliveryFee}");
         Console.WriteLine($"Extra Fee: {ExtraFee:C}");
+        Console.WriteLine($"Estimated Cost : {EstimatedCost}");
+        Console.WriteLine("================================");
+    }
+
+    public string GetTrackingStatus()
+    {
+        return "Shipment 'SH02' is out for delivering";
+    }
+
+    public decimal CalculateInsurance()
+    {
+        return EstimatedCost * 0.08m; // 8% of the estimated cost
     }
     #endregion
 }

@@ -1,5 +1,5 @@
 ﻿namespace Route_OOP_004;
-public class Shipment
+public abstract class Shipment
 {
     #region fields
     private string trackingCode;
@@ -94,11 +94,8 @@ public class Shipment
  
         }
     }
-           
-    public virtual decimal EstimatedCost
-    {
-        get { return DeliveryFee+(Weight*5); } 
-    }
+
+    public abstract decimal EstimatedCost { get; }
     #endregion
 
     #region methods
@@ -112,16 +109,7 @@ public class Shipment
         return DeliveryFee;
     }
 
-    public virtual void PrintShipment()
-    {
-        Console.WriteLine($"Destination is :{Destination}");
-        Console.WriteLine($"Tracking code : {TrackingCode}");
-        Console.WriteLine($"Description : {Description}");
-        Console.WriteLine($"Weight : {Weight}");
-        Console.WriteLine($"Delivery Fee : {DeliveryFee}");
-        Console.WriteLine($"Estimated Cost : {EstimatedCost}");
-        Console.WriteLine("================================");
-    }
+    public abstract void PrintShipment();
 
     public void Weight_update(decimal newWeight)
     {
