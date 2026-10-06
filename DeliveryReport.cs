@@ -2,7 +2,7 @@
 internal class DeliveryReport
 {
     #region methods
-    public void PrintShipment(ITrackable shipment)
+    public void PrintTrackable(ITrackable shipment)
     {
         Console.WriteLine($"Tracking Status: {shipment.GetTrackingStatus()}");
         Console.WriteLine("================================");

@@ -49,8 +49,21 @@ internal class Program
         #endregion
 
         #region h
+        DeliveryReport deliveryReport = new DeliveryReport();
+        ITrackable[] trackables = new ITrackable[]
+        {
+            STshipment,
+            EXshipment,
+            INshipment
+        };
 
+        foreach (ITrackable trackable in trackables)
+        {
+            deliveryReport.PrintTrackable(trackable);
+        }
         #endregion
+
+        #region i
     }
 }
 
